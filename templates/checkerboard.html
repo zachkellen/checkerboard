@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkerboard Assignment</title>
+</head>
+<body style="padding: 0;margin: 0;box-sizing: border-box;">
+    {% set color = secondColor %}
+    {% for rows in range(vertical): %}
+        <div style="display: flex; align-items: flex-start;">
+        {% for columns in range(horizontal): %}
+            {% if (rows + columns) % 2 == 1: %}
+                {% set color = startColor %}
+            {% else: %}
+                {% set color = secondColor %}
+                {% endif %}
+            <p style="margin: 0;border: 1px solid black;width: 20px;height: 20px; background-color: {{color}};"></p>
+            
+        {% endfor %}
+        </div>
+    {% endfor %}
+</body>
+</html>
